@@ -1,1 +1,1 @@
-# giphyAp
+# giphyApp
