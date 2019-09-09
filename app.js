@@ -1,5 +1,5 @@
 
-var giphyArray = ['koala', 'panda', 'elephant'];
+var giphyArray = ['Clueless', 'Mean Girls', 'Legally Blonde', 'Sixteen Candles'];
 
 
 
