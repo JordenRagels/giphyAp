@@ -12,6 +12,7 @@ giphyArray.forEach(function (element) {
 });
 
 $("button").on("click", function () {
+   $("#gifResults").empty();
     var searchTerm = $(this).data("value");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" 
@@ -28,6 +29,18 @@ $("button").on("click", function () {
 
         var results = res.data;
 
+        for (var i = 0; i < results.length; i++) {
+
+            var resultDiv = $("<div>");
+
+            var gifImage = $("<img>");
+           
+            gifImage.attr("src", results[i].images.fixed_height.url);
+
+            resultDiv.append(gifImage);
+
+            $("#gifResults").prepend(resultDiv);
+        }
 
     })
 
