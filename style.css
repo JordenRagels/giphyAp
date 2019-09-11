@@ -1,0 +1,17 @@
+.carousel {
+    width: 400px !important; 
+    height: 400px !important;
+    align-items: center;
+  justify-content: center !important;
+}
+body {
+    background-color: gray;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+.carousel-inner { 
+    margin:auto !important;
+    }

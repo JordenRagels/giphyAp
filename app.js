@@ -1,4 +1,6 @@
 
+$(document).ready(function() {
+
 var giphyArray = ['Clueless', 'Mean Girls', 'Legally Blonde', 'Sixteen Candles'];
 
 
@@ -11,7 +13,8 @@ giphyArray.forEach(function (element) {
 
 });
 
-$("button").on("click", function () {
+$(document).on("click","button", function () {
+    console.log("DO I WORK");
    $("#gifResults").empty();
     var searchTerm = $(this).data("value");
 
@@ -46,11 +49,31 @@ $("button").on("click", function () {
             gifImage.attr("data-still", results[i].images.fixed_height_still.url);
             resultDiv.append(gifImage);
             resultDiv.append(p);
+            resultDiv.attr("class", "carousel-item");
+            if (i === 0) {
+                resultDiv.attr("class","carousel-item active");
+            };
 
             $("#gifResults").prepend(resultDiv);
         }
     })
 })
+
+$(document).on("click", "#bt", function() {
+    var userInput = $("input[type='text']").val().trim()
+    $("#emptyInput").val('');
+    console.log(userInput);
+    console.log("hey");
+
+    giphyArray.push(userInput);
+    let b = $("<button>");
+    b.text(userInput);
+    b.attr("data-value", userInput);
+    $("#buttons").append(b);
+    
+})
+
+
 
 $(document).on("click", ".gif", function () {
     var state = $(this).attr("data-state");
@@ -65,4 +88,4 @@ $(document).on("click", ".gif", function () {
 
 })
 
-
+});
